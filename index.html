@@ -8,25 +8,30 @@
     <script src="script/script.js" defer></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container active">
          <div class="btc-container">
             <h1>Calculadora de Bitcoin</h1>
             <div class="money-input">
-                <label for="Price">Preço Médio Comprado</label>
-                <input type="text" name="price" id="preco-medio" placeholder="Digite aqui...">
+                <label for="Price">Preço Comprado</label>
+                <input type="text" name="price" id="preco-medio" placeholder="Quanto custava quando você comprou...">
             </div>
             <div class="money-input">
                 <label for="Price">Preço Atual</label>
-                <input type="text" name="price" id="preco-atual" placeholder="Digite aqui...">
+                <input type="text" name="price" id="preco-atual" placeholder="Quanto ele custa hoje...">
             </div>
             <div class="money-input">
                 <label for="Price">Valor Comprado</label>
-                <input type="text" name="value" id="valor-comprado" placeholder="Digite aqui...">
+                <input type="text" name="value" id="valor-comprado" placeholder="Quantos reais você comprou...">
             </div>
             <div class="btn-calcular">
                 <button id="btn-btc-calc">CALCULAR</button>
-            </div>
+            </div>            
         </div>
+    </div>
+    <div class="container hidden">
+        <p>Testando...</p>
+        <h2 id="teste"></h2>
+        <button class="btn-voltar">VOLTAR</button>
     </div>
 </body>
 </html>

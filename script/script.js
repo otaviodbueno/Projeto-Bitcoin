@@ -2,8 +2,20 @@ const valorMedioInput = document.querySelector("#preco-medio")
 const valorAtualInput = document.querySelector("#preco-atual")
 const valorCompradoInput = document.querySelector("#valor-comprado")
 const btnCalcular = document.querySelector("#btn-btc-calc")
+const divsPrincipais = document.querySelectorAll(".container")
+const btnVoltar = document.querySelector(".btn-voltar")
+
+// teste
+testeInput = document.querySelector("#teste")
 
 // funçao
+
+function alternarDivs(divs) {
+    divsPrincipais.forEach((container) => {
+        container.classList.toggle("active")
+        container.classList.toggle("hidden")
+    })
+}
 
 const calculaGanhoOuPerdaPorcentagem = (valorMedio, valorAtual) => {
 
@@ -31,6 +43,8 @@ const calculaGanhoOuPerdaReais = (valorComprado, valorMedio, valorAtual) => {
 
 
 const verificaGanho = (valorMedio, valorAtual) => {
+
+    if(valorMedio === valorAtual) return null; 
 
     if(valorMedio < valorAtual) {
         return true
@@ -69,11 +83,23 @@ btnCalcular.addEventListener("click", (e) => {
     const ganhoOuPerda = verificaGanho(valorMedio, valorAtual)
 
     switch(ganhoOuPerda) {
+        case null:
+            console.log(`Você não ganhou ou perdeu nada!`)
+            break;
         case true:
-            console.log(`Você está com um lucro de R$${reaisTratado}, parabéns!`)
+            // console.log(`Você está com um lucro de R$${reaisTratado}, parabéns!`)
+            testeInput.textContent = `Lucro de R$${reaisTratado}, parabéns!`
             break;
         case false: 
             console.log(`Você perdeu R$${reaisTratado}, que pena!`)
     }
 
+    alternarDivs(divsPrincipais);
+
+})
+
+btnVoltar.addEventListener("click", (e) => {
+    e.preventDefault()
+
+    alternarDivs(divsPrincipais);
 })
