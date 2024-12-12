@@ -3,15 +3,38 @@ const valorAtualInput = document.querySelector("#preco-atual")
 const valorCompradoInput = document.querySelector("#valor-comprado")
 const btnCalcular = document.querySelector("#btn-btc-calc")
 const divsPrincipais = document.querySelectorAll(".container")
-const btnVoltar = document.querySelector(".btn-voltar")
+const btnVoltar = document.querySelector("#btn-voltar")
 
-// teste
-testeInput = document.querySelector("#teste")
+const inputs = document.querySelectorAll(".inputs")
+
+const retornoReais = document.querySelector("#reais")
+const retornoPorcentagem = document.querySelector("#porcentagem")
+const errorMessageDiv = document.querySelector(".error-message")
 
 // funçao
 
+function showErrorMessage(inputs, errorMessageDiv) {
+
+    let erro = false
+
+    for(let input of inputs){
+        if(input.value.trim() === "") {
+
+           alternarDivs([errorMessageDiv]) 
+
+           setTimeout(() => {
+            alternarDivs([errorMessageDiv])
+           }, 2000)
+           erro = true
+           break;
+        }
+    }
+
+    return erro;
+}
+
 function alternarDivs(divs) {
-    divsPrincipais.forEach((container) => {
+    divs.forEach((container) => {
         container.classList.toggle("active")
         container.classList.toggle("hidden")
     })
@@ -58,40 +81,41 @@ const verificaGanho = (valorMedio, valorAtual) => {
 btnCalcular.addEventListener("click", (e) => {
     e.preventDefault()
 
+    const erro = showErrorMessage(inputs, errorMessageDiv)
+
+    if(erro) {
+        return;
+    }
+
+
     const valorMedio = parseFloat(valorMedioInput.value);
     const valorAtual = parseFloat(valorAtualInput.value);
     const valorComprado = parseFloat(valorCompradoInput.value);
 
-    const resultado = calculaGanhoOuPerdaPorcentagem(valorMedio, valorAtual)
+    const resultadoPerdaOuGanho = calculaGanhoOuPerdaPorcentagem(valorMedio, valorAtual)
 
-    const resultadoTratado = parseFloat(resultado.toFixed(2))
+    const resultadoPorcentagem = parseFloat(resultadoPerdaOuGanho.toFixed(2))
 
-    const ganho = verificaGanho(valorMedio, valorAtual)
+    const reaisPerdidosOuGanhados = calculaGanhoOuPerdaReais(valorComprado, valorMedio, valorAtual)
 
-    switch(ganho) {
-       case true:
-        console.log(`Você obteve uma valorização de ${resultadoTratado}%`)
-        break;
-       case false: 
-       console.log(`Você obteve uma desvalorização de ${resultadoTratado}%`)
-    }
-
-    const reais = calculaGanhoOuPerdaReais(valorComprado, valorMedio, valorAtual)
-
-    const reaisTratado = parseFloat(reais.toFixed(2))
+    const reais = parseFloat(reaisPerdidosOuGanhados.toFixed(2))
 
     const ganhoOuPerda = verificaGanho(valorMedio, valorAtual)
 
     switch(ganhoOuPerda) {
         case null:
-            console.log(`Você não ganhou ou perdeu nada!`)
+            retornoReais.textContent = "Você não ganhou nem perdeu nada. Por enquanto..."
+            retornoPorcentagem.textContent = "Seu dinheiro não valorizou ainda, quem sabe no futuro..."
             break;
         case true:
             // console.log(`Você está com um lucro de R$${reaisTratado}, parabéns!`)
-            testeInput.textContent = `Lucro de R$${reaisTratado}, parabéns!`
+            retornoReais.textContent = `Lucro de R$${reais}, parabéns!`
+            retornoPorcentagem.textContent = `Este lucro entrega uma valorização de ${resultadoPorcentagem}%`
             break;
         case false: 
-            console.log(`Você perdeu R$${reaisTratado}, que pena!`)
+            retornoReais.textContent = `Você perdeu R$${reais}, que pena!`
+            retornoPorcentagem.textContent = `Seu dinheiro desvalorizou ${resultadoPorcentagem}%...`
+            //console.log(`Você perdeu R$${reaisTratado}, que pena!`)
     }
 
     alternarDivs(divsPrincipais);
