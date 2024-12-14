@@ -15,6 +15,10 @@ const errorMessageDiv = document.querySelector(".error-message")
 
 function showErrorMessage(inputs, errorMessageDiv) {
 
+    if(errorMessageDiv.classList.contains("active")) {
+        return null;
+    }
+
     let erro = false
 
     for(let input of inputs){
@@ -24,7 +28,7 @@ function showErrorMessage(inputs, errorMessageDiv) {
 
            setTimeout(() => {
             alternarDivs([errorMessageDiv])
-           }, 2000)
+           }, 1200)
            erro = true
            break;
         }
@@ -83,10 +87,9 @@ btnCalcular.addEventListener("click", (e) => {
 
     const erro = showErrorMessage(inputs, errorMessageDiv)
 
-    if(erro) {
+    if(erro || erro === null) {
         return;
     }
-
 
     const valorMedio = parseFloat(valorMedioInput.value);
     const valorAtual = parseFloat(valorAtualInput.value);
