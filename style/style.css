@@ -1,7 +1,14 @@
+:root {
+    --azul-claro: #abcbe6;
+    --azul-escuro: rgb(21, 39, 113);
+}
+
+
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Chau Philomene One";
+    color:  rgb(5, 12, 39);
 }
 
 .active {
@@ -13,11 +20,9 @@
 }
 
 body {
-    background-image: url("../image-from-rawpixel-id-541725-jpeg-5000x3337.jpg.webp");
-    background-color: rgb(46, 46, 180);
+    background-image: url("../imagembtc.png");
     background-size: cover;
-    align-items: center;
-    justify-content: center;
+    justify-content: right;
     display: flex;
     height: 100vh;
 }
@@ -37,15 +42,16 @@ body {
 }
 
 .container {
-    justify-content: center;
-    align-items: center;
-    background-color: #f1edc6;
+    justify-content: right;
+    margin-right: 130px;
+    margin-top: 85px;
+    background-color: var(--azul-claro);
     padding: 2rem;
-    border: 2px solid black;
     box-sizing: border-box;
-    width: 800px;
+    width: 600px;
     border-radius: 20px;
     box-shadow: 1px 1px 1px black;
+    height: 550px;
 }
 
 .btc-container {
@@ -63,37 +69,55 @@ body {
 .money-input {
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 1rem;
     margin: 0.5rem;   
+}
+
+#preco-medio::placeholder,
+#preco-atual::placeholder,
+#valor-comprado::placeholder {
+    color: var(--azul-claro);
 }
 
 .money-input input {
     margin-top: 12px;
     height: 40px;
     padding: 5px;
+    border-radius: 8px;
     box-sizing: border-box;
+    background-color: var(--azul-escuro);
+    color: var(--azul-claro);
+    border: none;
 }
 
+.money-input input:focus {
+    outline: none;
+}
+
+
 .money-input label {
-    font-weight: bolder;
     font-size: 1.2rem;
+    padding: 3px;
+    background-color: rgb(215, 246, 250);
+    border-radius: 8px;
+    width: 50%;
 }
 
 .btn-calcular {
-    margin: 0 auto;
+    margin: 17px auto;
     text-align: center;
 }
 
 #btn-btc-calc {
     padding: 15px 30px;
-    background-color: rgb(91, 199, 91);
-    color: white;
+    background-color: var(--azul-escuro);
+    color: var(--azul-claro);
     transition: 0.4s;
+    opacity: 1;
 }
 
 #btn-btc-calc:hover {
-    color: rgb(91, 199, 91);
-    background-color: white;
+    opacity: 0.85;
     cursor: pointer;
 }
 

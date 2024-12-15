@@ -29,7 +29,9 @@ function showErrorMessage(inputs, errorMessageDiv) {
            setTimeout(() => {
             alternarDivs([errorMessageDiv])
            }, 1200)
+
            erro = true
+
            break;
         }
     }
