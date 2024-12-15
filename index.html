@@ -17,7 +17,7 @@
     </div>
     <div class="container active">
         <h1>CALCULADORA DE BITCOIN</h1>
-         <div class="btc-container">
+         <form class="btc-container" autocomplete="off">
             <div class="money-input">
                 <label for="Price">VALOR NO PERÍODO COMPRADO</label>
                 <input type="number" name="price" class="inputs" id="preco-medio" placeholder="Quanto custava quando você comprou...">
@@ -33,19 +33,19 @@
             <div class="btn-calcular">
                 <button id="btn-btc-calc">CALCULAR</button>
             </div>            
-        </div>
+        </form>
     </div>
     <div class="container hidden">
         <div class="resultados">
-            <h1>Seu Dinheiro:</h1>
+            <h1>SEU DINHEIRO:</h1>
             <h2 class="data-return" id="reais"></h2>
         </div>
         <div class="resultados">
-            <h1>Sua Valorização:</h1>
+            <h1>SUA VALORIZAÇÃO:</h1>
             <h2 class="data-return" id="porcentagem"></h2>
         </div>
         <div class="resultados">
-            <h1>Quantidade de BTC:</h1>
+            <h1>QUANTIDADE DE BTC:</h1>
             <h2 class="data-return" id="qtd-btc"></h2>
         </div>
         <div class="btn-calcular">

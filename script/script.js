@@ -127,6 +127,8 @@ btnCalcular.addEventListener("click", (e) => {
             retornoPorcentagem.textContent = `Seu dinheiro desvalorizou ${resultadoPorcentagem}%...`
     }
 
+    quantidadeBitcoin.textContent = `Você possui ${quantidadeBtc} BTC`
+
     alternarDivs(divsPrincipais);
 
 })

@@ -29,14 +29,14 @@ body {
 
 .error-message {
     position: fixed;
-    top: 28px;
-    right: 35px;
-    width: 330px;
+    top: 2rem;
+    right: 2.5rem;
+    width: 20rem;
     font-size: 0.6rem;
     text-align: center;
     background-color: #ff3838;
     color: #f5f0f0;
-    padding: 10px;
+    padding: 0.6rem;
     box-shadow: 1px 1px 4px black;
     border-radius: 5px;
 }
@@ -47,15 +47,15 @@ body {
 
 .container {
     justify-content: right;
-    margin-right: 130px;
-    margin-top: 85px;
+    margin-right: 10rem;
+    margin-top: 10rem;
     background-color: var(--azul-claro);
     padding: 2rem;
     box-sizing: border-box;
-    width: 600px;
+    width: 45rem;
     border-radius: 20px;
     box-shadow: 1px 1px 1px black;
-    height: 550px;
+    height: 40rem;
 }
 
 .btc-container {
@@ -80,42 +80,43 @@ body {
 #preco-medio::placeholder,
 #preco-atual::placeholder,
 #valor-comprado::placeholder {
-    color: var(--azul-claro);
+    color: var(--azul-escuro);
 }
 
 .money-input input {
-    margin-top: 12px;
-    height: 40px;
-    padding: 5px;
+    margin-top: 0.6rem;
+    height: 3rem;
+    padding: 0.3rem;
     border-radius: 8px;
     box-sizing: border-box;
-    background-color: var(--azul-escuro);
-    color: var(--azul-claro);
+    background-color: rgb(228, 239, 248);
+    color: var(--azul-escuro);
     border: none;
+    box-shadow: 1px 1px 6px black;
 }
 
 .money-input input:focus {
     outline: none;
+    background-color: rgb(228, 239, 248); 
 }
 
 
 .money-input label {
     font-size: 1.2rem;
-    padding: 3px;
-    /*background-color: rgb(215, 246, 250);*/
+    padding: 0.3rem;
     border-radius: 8px;
-    width: 50%;
 }
 
 .btn-calcular {
-    margin: 17px auto;
+    margin: 2rem auto;
     text-align: center;
 }
 
 #btn-btc-calc {
-    padding: 15px 30px;
+    padding: 1.1rem 5rem;
+    border-radius: 4px;
     background-color: var(--azul-escuro);
-    color: var(--azul-claro);
+    color: rgb(228, 239, 248);
     transition: 0.4s;
     opacity: 1;
 }
@@ -133,19 +134,99 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 
 /* segunda div */ 
 
-.data-return {
-    padding: 15px 0px;
-}
 
 #btn-voltar {
-    padding: 15px 30px;
-    background-color: rgb(221, 40, 40);
-    color: white;
+    padding: 1.1rem 5.3rem;
+    border-radius: 4px;
+    background-color: var(--azul-escuro);
+    color: rgb(228, 239, 248);
     transition: 0.4s;
+    opacity: 1;
 }
 
 #btn-voltar:hover {
-    color:  rgb(221, 40, 40);
-    background-color: white;
+    opacity: 0.85;
     cursor: pointer;
+}
+
+.resultados {
+    padding: 1rem;
+    justify-items: left;
+}
+
+.resultados h1 {
+    padding: 0.5rem;
+    font-weight: lighter;
+}
+
+.data-return {
+    background-color: var(--azul-escuro);
+    color: rgb(228, 239, 248) ;
+    box-shadow: 1px 1px 5px var(--azul-escuro);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 0.2rem;
+    width: 36rem;
+    font-weight: lighter;
+}
+
+
+/* responsividade */ 
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem; 
+        border-radius: 10px; 
+    }
+
+    .money-input input {
+        font-size: 0.9rem; 
+    }
+
+    .btn-calcular button {
+        font-size: 1rem; 
+    }
+
+    h1, h2 {
+        font-size: 1rem; 
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        justify-content: center; 
+        margin: 0;
+    }
+
+    .container {
+        margin: 2rem auto; 
+        width: 90%; 
+        height: auto; 
+    }
+
+    .container h1 {
+        font-size: 1.2rem; 
+    }
+
+    .money-input label {
+        font-size: 1rem; 
+    }
+
+    .money-input input {
+        height: 2.5rem; 
+        padding: 0.2rem; 
+    }
+
+    #btn-btc-calc,
+    #btn-voltar {
+        padding: 1rem 3rem; 
+    }
+
+    .resultados h1 {
+        font-size: 1rem; 
+    }
+
+    .data-return {
+        width: 90%; 
+    }
 }
