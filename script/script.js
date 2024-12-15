@@ -9,6 +9,7 @@ const inputs = document.querySelectorAll(".inputs")
 
 const retornoReais = document.querySelector("#reais")
 const retornoPorcentagem = document.querySelector("#porcentagem")
+const quantidadeBitcoin = document.querySelector("#qtd-btc")
 const errorMessageDiv = document.querySelector(".error-message")
 
 // funçao
@@ -96,6 +97,8 @@ btnCalcular.addEventListener("click", (e) => {
     const valorMedio = parseFloat(valorMedioInput.value);
     const valorAtual = parseFloat(valorAtualInput.value);
     const valorComprado = parseFloat(valorCompradoInput.value);
+    const _quantidadeBtc = valorComprado / valorMedio
+    const quantidadeBtc = parseFloat(_quantidadeBtc.toFixed(6))
 
     const resultadoPerdaOuGanho = calculaGanhoOuPerdaPorcentagem(valorMedio, valorAtual)
 
@@ -104,23 +107,24 @@ btnCalcular.addEventListener("click", (e) => {
     const reaisPerdidosOuGanhados = calculaGanhoOuPerdaReais(valorComprado, valorMedio, valorAtual)
 
     const reais = parseFloat(reaisPerdidosOuGanhados.toFixed(2))
-
+    
     const ganhoOuPerda = verificaGanho(valorMedio, valorAtual)
 
     switch(ganhoOuPerda) {
         case null:
             retornoReais.textContent = "Você não ganhou nem perdeu nada. Por enquanto..."
             retornoPorcentagem.textContent = "Seu dinheiro não valorizou ainda, quem sabe no futuro..."
+            quantidadeBitcoin.textContent = `quantidade btc ${quantidadeBtc}`
             break;
+
         case true:
-            // console.log(`Você está com um lucro de R$${reaisTratado}, parabéns!`)
             retornoReais.textContent = `Lucro de R$${reais}, parabéns!`
             retornoPorcentagem.textContent = `Este lucro entrega uma valorização de ${resultadoPorcentagem}%`
             break;
+
         case false: 
             retornoReais.textContent = `Você perdeu R$${reais}, que pena!`
             retornoPorcentagem.textContent = `Seu dinheiro desvalorizou ${resultadoPorcentagem}%...`
-            //console.log(`Você perdeu R$${reaisTratado}, que pena!`)
     }
 
     alternarDivs(divsPrincipais);
