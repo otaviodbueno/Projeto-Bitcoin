@@ -98,15 +98,16 @@ btnCalcular.addEventListener("click", (e) => {
     const valorAtual = parseFloat(valorAtualInput.value);
     const valorComprado = parseFloat(valorCompradoInput.value);
     const _quantidadeBtc = valorComprado / valorMedio
-    const quantidadeBtc = parseFloat(_quantidadeBtc.toFixed(6))
+    const quantidadeBtc = parseFloat(_quantidadeBtc.toFixed(6)).toLocaleString('pt-br')
 
     const resultadoPerdaOuGanho = calculaGanhoOuPerdaPorcentagem(valorMedio, valorAtual)
 
-    const resultadoPorcentagem = parseFloat(resultadoPerdaOuGanho.toFixed(2))
+    const resultadoPorcentagem = parseFloat(resultadoPerdaOuGanho.toFixed(2)).toLocaleString('pt-br')
 
-    const reaisPerdidosOuGanhados = calculaGanhoOuPerdaReais(valorComprado, valorMedio, valorAtual)
+    const reaisPerdidosOuGanhos = calculaGanhoOuPerdaReais(valorComprado, valorMedio, valorAtual)
 
-    const reais = parseFloat(reaisPerdidosOuGanhados.toFixed(2))
+    const _reais = parseFloat(reaisPerdidosOuGanhos.toFixed(2))
+    const reais = _reais.toLocaleString('pt-br')
     
     const ganhoOuPerda = verificaGanho(valorMedio, valorAtual)
 
