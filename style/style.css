@@ -235,64 +235,64 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 
 @media (max-width: 1600px) {
     .container {
-        margin: 5rem; /* Centraliza a div no notebook */
-        width: 40rem; /* Ajusta a largura para telas menores */
-        height: auto; /* Permite ajuste dinâmico na altura */
-        padding: 2rem 1.5rem; /* Reduz padding interno */
+        margin: 5rem;
+        width: 40rem; 
+        height: auto;
+        padding: 2rem 1.5rem; 
     }
 
     .container h1 {
-        font-size: 1.4rem; /* Reduz o tamanho da fonte */
+        font-size: 1.4rem; 
     }
 
     .money-input label {
-        font-size: 1.1rem; /* Reduz a fonte dos labels */
+        font-size: 1.1rem; 
     }
 
     .money-input input {
-        height: 2.8rem; /* Ajusta a altura dos inputs */
-        padding: 0.4rem; /* Reduz padding */
+        height: 2.8rem; 
+        padding: 0.4rem; 
     }
 
     #btn-btc-calc,
     #btn-voltar {
-        padding: 1rem 4rem; /* Ajusta os botões */
+        padding: 1rem 4rem;
     }
 
     .data-return {
-        width: 80%; /* Reduz a largura dos retornos */
-        margin: 0.5rem auto; /* Centraliza os elementos */
+        width: 80%; 
+        margin: 0.5rem auto;
     }
 }
 
 @media (max-width: 1366px) {
     .container {
-        margin: 3rem auto; /* Aproxima mais o conteúdo no notebook */
-        width: 43rem; /* Ajusta a largura */
-        padding: 2rem 1rem; /* Reduz padding */
+        margin: 3rem auto;
+        width: 43rem; 
+        padding: 2rem 1rem; 
     }
 
     .container h1 {
-        font-size: 1.3rem; /* Fonte menor para títulos */
+        font-size: 1.3rem;
     }
 
     .money-input label {
-        font-size: 1rem; /* Fonte menor para labels */
+        font-size: 1rem; 
     }
 
     .money-input input {
-        height: 2.5rem; /* Inputs mais compactos */
-        font-size: 0.95rem; /* Texto dentro dos inputs menor */
+        height: 2.5rem;
+        font-size: 0.95rem;
     }
 
     #btn-btc-calc,
     #btn-voltar {
-        padding: 0.9rem 3.5rem; /* Ajuste nos botões */
-        font-size: 0.9rem; /* Fonte menor nos botões */
+        padding: 0.9rem 3.5rem;
+        font-size: 0.9rem;
     }
 
     .data-return {
-        width: 85%; /* Ajusta a largura */
-        font-size: 0.9rem; /* Reduz o texto dentro dos retornos */
+        width: 85%;
+        font-size: 0.9rem; 
     }
 }

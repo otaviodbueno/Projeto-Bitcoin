@@ -1,19 +1,17 @@
+// Seleção de elementos
 const valorMedioInput = document.querySelector("#preco-medio")
 const valorAtualInput = document.querySelector("#preco-atual")
 const valorCompradoInput = document.querySelector("#valor-comprado")
 const btnCalcular = document.querySelector("#btn-btc-calc")
 const divsPrincipais = document.querySelectorAll(".container")
 const btnVoltar = document.querySelector("#btn-voltar")
-
 const inputs = document.querySelectorAll(".inputs")
-
 const retornoReais = document.querySelector("#reais")
 const retornoPorcentagem = document.querySelector("#porcentagem")
 const quantidadeBitcoin = document.querySelector("#qtd-btc")
 const errorMessageDiv = document.querySelector(".error-message")
 
-// funçao
-
+// Funções
 function showErrorMessage(inputs, errorMessageDiv) {
 
     if(errorMessageDiv.classList.contains("active")) {
@@ -48,7 +46,6 @@ function alternarDivs(divs) {
 }
 
 const calculaGanhoOuPerdaPorcentagem = (valorMedio, valorAtual) => {
-
     let porcentagem;
 
     if(valorMedio < valorAtual) {
@@ -56,6 +53,7 @@ const calculaGanhoOuPerdaPorcentagem = (valorMedio, valorAtual) => {
     } else {
           porcentagem = ((valorMedio - valorAtual) / valorMedio) * 100
     }
+
     return porcentagem
 }
 
@@ -83,8 +81,7 @@ const verificaGanho = (valorMedio, valorAtual) => {
     }
 }
 
-// eventos 
-
+// Eventos
 btnCalcular.addEventListener("click", (e) => {
     e.preventDefault()
 
