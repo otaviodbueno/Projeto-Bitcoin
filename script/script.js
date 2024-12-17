@@ -119,7 +119,7 @@ btnCalcular.addEventListener("click", (e) => {
             break;
 
         case true:
-            retornoReais.textContent = `Lucro de R$${reais}, parabéns!`
+            retornoReais.textContent = `Lucro de R$${reais}... parabéns!`
             retornoPorcentagem.textContent = `Este lucro entrega uma valorização de ${resultadoPorcentagem}%`
             break;
 

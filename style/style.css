@@ -19,12 +19,14 @@
     display: none;
 }
 
-body {
+html, body {
     background-image: url("../imagembtc.png");
     background-size: cover;
-    justify-content: right;
+    justify-content: flex-end;
     display: flex;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .error-message {
@@ -46,7 +48,7 @@ body {
 }
 
 .container {
-    justify-content: right;
+    justify-content: flex-end;
     margin-right: 10rem;
     margin-top: 10rem;
     background-color: var(--azul-claro);
@@ -228,5 +230,69 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 
     .data-return {
         width: 90%; 
+    }
+}
+
+@media (max-width: 1600px) {
+    .container {
+        margin: 5rem; /* Centraliza a div no notebook */
+        width: 40rem; /* Ajusta a largura para telas menores */
+        height: auto; /* Permite ajuste dinâmico na altura */
+        padding: 2rem 1.5rem; /* Reduz padding interno */
+    }
+
+    .container h1 {
+        font-size: 1.4rem; /* Reduz o tamanho da fonte */
+    }
+
+    .money-input label {
+        font-size: 1.1rem; /* Reduz a fonte dos labels */
+    }
+
+    .money-input input {
+        height: 2.8rem; /* Ajusta a altura dos inputs */
+        padding: 0.4rem; /* Reduz padding */
+    }
+
+    #btn-btc-calc,
+    #btn-voltar {
+        padding: 1rem 4rem; /* Ajusta os botões */
+    }
+
+    .data-return {
+        width: 80%; /* Reduz a largura dos retornos */
+        margin: 0.5rem auto; /* Centraliza os elementos */
+    }
+}
+
+@media (max-width: 1366px) {
+    .container {
+        margin: 3rem auto; /* Aproxima mais o conteúdo no notebook */
+        width: 43rem; /* Ajusta a largura */
+        padding: 2rem 1rem; /* Reduz padding */
+    }
+
+    .container h1 {
+        font-size: 1.3rem; /* Fonte menor para títulos */
+    }
+
+    .money-input label {
+        font-size: 1rem; /* Fonte menor para labels */
+    }
+
+    .money-input input {
+        height: 2.5rem; /* Inputs mais compactos */
+        font-size: 0.95rem; /* Texto dentro dos inputs menor */
+    }
+
+    #btn-btc-calc,
+    #btn-voltar {
+        padding: 0.9rem 3.5rem; /* Ajuste nos botões */
+        font-size: 0.9rem; /* Fonte menor nos botões */
+    }
+
+    .data-return {
+        width: 85%; /* Ajusta a largura */
+        font-size: 0.9rem; /* Reduz o texto dentro dos retornos */
     }
 }
