@@ -238,6 +238,7 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
         margin-right: 8rem;
         margin-top: 7rem;
         width: 36rem; 
+        max-width: 36rem;
         height: 32rem;
         padding: 1.6rem; 
     }
