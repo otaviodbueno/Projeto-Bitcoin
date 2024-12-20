@@ -49,8 +49,7 @@ html, body {
 
 .container {
     justify-content: flex-end;
-    margin-right: 10rem;
-    margin-top: 10rem;
+    margin: auto 10rem;
     background-color: var(--azul-claro);
     padding: 2rem;
     box-sizing: border-box;
@@ -235,8 +234,7 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
 
 @media (max-width: 1600px) {
     .container {
-        margin-right: 8rem;
-        margin-top: 7rem;
+        margin: auto 8rem;
         width: 36rem; 
         max-width: 36rem;
         height: 32rem;
@@ -282,12 +280,19 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
         width: 28.8rem;
         font-size: 1.2rem;
     }
+
+    .error-message {
+        top: 1.5rem;
+        right: 1.8rem;
+        width: 20rem;
+        font-size: 0.5rem;
+        padding: 0.6rem;
+    }
 }
 
 @media (max-width: 1366px) {
     .container {
-        margin-right: 6.8rem;
-        margin-top: 5.6rem;
+        margin: auto 6.8rem;
         width: 32rem; 
         max-width: 32rem;
         height: 28rem;
@@ -325,5 +330,13 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
         margin: 0.11rem;
         width: 25rem;
         font-size: 1rem;
+    }
+
+    .error-message {
+        top: 1.2rem;
+        right: 1.5rem;
+        width: 20rem;
+        font-size: 0.5rem;
+        padding: 0.6rem;
     }
 }
